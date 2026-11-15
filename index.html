@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Golden Nest</title>
+  <link rel="stylesheet" href="style.css">
+
+ 
+</head>
+<body>
+
+<header>
+  <div class="logo" onclick="showPage('dashboard')">
+    <svg class="nest-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-label="Golden Nest emblem">
+      <path d="M8 43 Q32 60 56 43" fill="none" stroke="#d9ad55" stroke-width="4" stroke-linecap="round"/>
+      <path d="M12 35 Q32 51 52 35" fill="none" stroke="#d9ad55" stroke-width="3.5" stroke-linecap="round"/>
+      <path d="M17 27 Q32 42 47 27" fill="none" stroke="#d9ad55" stroke-width="3" stroke-linecap="round"/>
+      <path d="M21 21 Q32 8 43 21 Q49 32 32 38 Q15 32 21 21Z" fill="#f2d58d"/>
+      <path d="M25 22 Q32 16 39 22" fill="none" stroke="#a87925" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    <span>GOLDEN NEST</span>
+  </div>
+
+  <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()" aria-expanded="false" aria-controls="mainMenu">
+    ☰ Menu
+  </button>
+
+  <nav class="menu" id="mainMenu">
+    <button class="nav-link active" onclick="showPage('dashboard')">Home</button>
+    <button class="nav-link" onclick="showPage('about')">About</button>
+    <button class="nav-link" onclick="showPage('privacy')">Privacy</button>
+    <button class="nav-link" onclick="showPage('contactus')">Contact Us</button>
+    <button id="themeToggle" class="theme-toggle" type="button">
+  🌙 Dark Mode
+</button>
+  </nav>
+</header>
+
+<div class="marquee">
+  <div class="marquee-content">
+    <marquee behavior="" direction=""><b>LEARN ✦ EXPLORE ✦ MARKET ✦ INVEST ✦ GROW WITH GOLDEN NEST!</b></marquee>
+  </div>
+</div>
+
+<main>
+
+  <!-- DASHBOARD -->
+  <section class="page active" id="dashboard">
+    <div class="fade page-heading">
+      <span class="pill">WELCOME TO GOLDEN NEST</span>
+      <h1>Dashboard</h1>
+      <p class="small">Manage your account and explore your investment activity.</p>
+    </div>
+
+    <div class="dashboard-card fade">
+      <div class="dashboard-label">Available Account Balance</div>
+      <div class="big bal">$0.00</div>
+      <div class="dashboard-buttons">
+        <button class="gold" onclick="showPage('deposit')">Deposit</button>
+        <button class="secondary" onclick="showPage('withdraw')">Withdraw</button>
+      </div>
+    </div>
+
+    <div class="dashboard-stats fade">
+      <div class="dashboard-stat">
+        <div class="dashboard-stat-label">Portfolio</div>
+        <div class="dashboard-stat-value" id="portfolioValue">$0.00</div>
+      </div>
+      <div class="dashboard-stat">
+        <div class="dashboard-stat-label">Total Profit</div>
+        <div class="dashboard-stat-value profit" id="profitValue">$0.00</div>
+      </div>
+      <div class="dashboard-stat">
+        <div class="dashboard-stat-label">Bonus</div>
+        <div class="dashboard-stat-value" id="bonusValue">$0.00</div>
+      </div>
+      <div class="dashboard-stat">
+        <div class="dashboard-stat-label">Total Deposit</div>
+        <div class="dashboard-stat-value" id="dashboardDeposit">$0.00</div>
+      </div>
+    </div>
+ 
+
+    <div class="section-actions fade">
+      <button onclick="showPage('shop')">Explore Plans</button>
+      <button onclick="showPage('invest')">Invest</button>
+      <button class="outline-btn" onclick="showPage('history')">Transaction History</button>
+    </div>
+
+
+    
+
+    <div class="box fade">
+      <div class="row">
+        <h2>Recent Transactions</h2>
+        <button class="text-button" onclick="showPage('history')">View All</button>
+      </div>
+      <div id="dashList"></div>
+    </div>
+  </section>
+
+
+<!-- GOLDEN NEST LIVE CRYPTO MARKET -->
+<section class="crypto-market-section">
+
+  <div class="market-heading">
+    <div>
+      <span class="chart-label">GOLDEN NEST MARKET</span>
+      <h2>Cryptocurrency Prices</h2>
+      <p>Track live cryptocurrency market prices.</p>
+    </div>
+
+    <span class="market-live">
+      <span class="live-dot"></span>
+      LIVE
+    </span>
+  </div>
+
+  <div class="market-table-wrapper">
+    <table class="crypto-market-table">
+      <thead>
+        <tr>
+          <th>Coin</th>
+          <th>Price (USD)</th>
+          <th>24h Change</th>
+          <th>Market Cap</th>
+        </tr>
+      </thead>
+
+      <tbody id="cryptoMarketBody">
+        <tr>
+          <td colspan="4">Loading market prices...</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="market-footer">
+    <span>Market data by CoinGecko</span>
+    <span id="marketLastUpdated">Updating prices...</span>
+  </div>
+
+</section>
+  
+
+  <!-- ABOUT -->
+  <section class="page" id="about">
+    <div class="fade page-heading">
+      <span class="pill">GET TO KNOW US</span>
+      <h1>About Golden Nest</h1>
+      <p class="small">Learn more about our platform and services.</p>
+    </div>
+
+    <div class="box fade">
+      <h2><b>Welcom to Golden Nest</b></h2> <br>
+      <b>A smarter way to explore the Digital Asset World</b> <br>
+
+      <p>
+        Welcome to <b>Golden Nest</b>, a digital platform created around the evolving world of cryptocurrency, financial technology and digital asset exploration. <br>
+
+As the financial landscape continues to change, digital assets are becoming an increasingly discussed part of the global economy. New technologies, emerging markets and innovative financial tools are creating opportunities for people to learn more about how the digital economy works. <br>
+
+At Golden Nest, our aim is to provide an organized and accessible digital environment where users can explore cryptocurrency markets, monitor market movements, discover platform features and manage their account activities conveniently. <br>
+
+We believe that a good digital experience should combine simplicity, accessibility, useful information and responsible decision-making. Whether you are exploring cryptocurrency for the first time or already familiar with digital assets, Golden Nest is designed to make navigating its available features straightforward. <br><br>
+
+<b>1. Who We Are</b> <br><br>
+
+<b>Golden Nest</b> is a digital platform focused on cryptocurrency market exploration and account management. <br>
+
+We bring together different digital features in one environment, helping users access market information and navigate available services without unnecessary complexity. <br>
+
+Our approach is built around creating a convenient experience, maintaining clear communication and making relevant platform information accessible. <br>
+
+We understand that the digital financial industry is constantly developing. For that reason, we believe users should have access to understandable information that helps them become more familiar with the services and tools they interact with. <br><br><br>
+
+<b>2. Our Vision</b> <br><br>
+
+Our vision is to establish Golden Nest as a recognizable and accessible digital platform within the growing digital asset ecosystem. <br><br>
+
+We envision a platform where people can explore cryptocurrency markets, understand emerging digital technologies and become more informed about the different possibilities within the digital financial environment. <br><br>
+
+We want to encourage curiosity, continuous learning and responsible participation in an industry that continues to evolve. <br><br>
+
+Our ambition is to keep improving the platform experience while making its features easier to access and understand. <br><br><br>
+
+<b>3. Our Mission</b> <br><br>
+
+Our mission is to provide a convenient digital environment that brings together market information, account tools and accessible platform services. <br><br>
+
+We are committed to: <br><br>
+
+<li>
+  <ul>Making cryptocurrency market information easier to explore.</ul> <br>
+  <ul>Providing a straightforward account management experience.</ul> <br>
+  <ul>Improving the accessibility of available platform features..</ul> <br>
+  <ul>Encouraging informed and responsible financial decisions.</ul> <br>
+  <ul>Maintaining clear communication about platform services.</ul> <br>
+  <ul>Continuously improving the overall user experience.</ul> 
+  
+</li> <br>
+
+We believe that meaningful progress begins with knowledge, transparency and a willingness to improve. <br><br><br>
+
+<b>4. What We Offer</b> <br><br>
+
+Golden Nest brings together several features intended to make the digital asset experience more organized and convenient. <br><br>
+
+Cryptocurrency Market Updates <br><br>
+
+Users can explore selected cryptocurrencies and monitor market prices, percentage movements and other available market information. Our market section is designed to make it easier to follow developments across the cryptocurrency market. <br><br>
+
+Personal Account Dashboard <br><br>
+
+The dashboard provides a central place to view account information and access available platform features. It is designed to make navigation and account activities more convenient. <br><br>
+
+Investment Information <br><br>
+
+Users can explore the investment options displayed on the platform, review their stated terms and understand the conditions associated with each option before making a decision. <br><br>
+
+Deposit Services <br><br>
+
+The platform provides a deposit interface where users can access the available payment instructions and submit the required transaction information. <br><br>
+
+Withdrawal Services <br><br>
+
+Users can access the withdrawal section to submit withdrawal requests in accordance with the company's stated procedures and conditions. <br><br>
+
+Transaction History <br><br>
+
+The transaction section provides an organized view of recorded account activities, helping users follow their transaction records. <br><br>
+
+User-Friendly Navigation <br><br>
+
+Golden Nest is designed with accessible navigation and organized sections so that users can find the features they need without unnecessary difficulty. <br><br><br>
+
+<b>5. Our Core Values</b> <br><br>
+
+Our platform philosophy is guided by values that we believe are important in the digital financial environment. <br><br>
+
+Transparency <br><br>
+
+We believe users should have access to understandable information about the services, features, terms and conditions they interact with. <br><br>
+
+Simplicity <br><br>
+
+Digital platforms should not feel unnecessarily complicated. We aim to make our interface straightforward, organized and convenient. <br><br>
+
+Continuous Improvement <br><br>
+
+Technology never stands still. We recognize the importance of reviewing, improving and developing the platform experience as digital needs evolve. <br><br>
+
+Responsibility <br><br>
+
+Financial decisions should be approached with care. We encourage users to understand the risks associated with cryptocurrency and other digital asset activities before participating. <br><br>
+
+User Experience <br><br>
+
+We value an organized environment where users can navigate available features and access relevant information conveniently. <br><br><br>
+
+<b>6. Our Approach to Technology</b> <br><br>
+
+Technology plays an important role in how people access information and interact with digital financial services. <br><br>
+
+Golden Nest embraces the possibilities of digital technology by bringing different platform features together in one accessible environment. <br><br>
+
+From cryptocurrency market displays to account navigation and transaction interfaces, our goal is to make the experience more organized and convenient. <br><br>
+
+We recognize that technology requires continuous attention, improvement and responsible implementation. As the platform develops, we aim to improve its usability, accessibility and overall experience. <br><br><br>
+
+<b>7. Security, Privacy and User Awareness</b> <br><br>
+
+We recognize that users value the privacy of their information and the responsible handling of account activities. <br><br>
+
+Golden Nest encourages users to protect their login credentials, avoid sharing sensitive account information and carefully review transaction details before submitting requests. <br><br>
+
+Users should also review the company’s applicable privacy policy, security information and service conditions. <br><br>
+
+Cryptocurrency transactions may be irreversible, and digital asset markets can be volatile. Users should never invest money they cannot afford to lose or assume that displayed investment rates represent guaranteed returns. <br><br><br>
+
+<b>8. Our Commitment to Growth</b> <br><br>
+
+Growth is not simply about adding more features. It is also about improving the quality of the experience people receive when interacting with a platform. <br> <br>
+
+At Golden Nest, we recognize the importance of listening, learning and identifying areas where the platform can become more accessible and useful. <br><br>
+
+Our long-term objective is to continue developing an organized digital environment that reflects the changing needs of users and the broader digital asset industry. <br><br>
+
+We believe that progress comes through consistency, responsible development and a commitment to improvement. <br><br><br>
+
+<b>9. Looking Ahead</b> <br><br>
+
+The digital asset industry continues to develop, with new technologies, market participants and financial innovations emerging over time. <br><br>
+
+Golden Nest aims to remain focused on providing an accessible platform experience while continuing to explore opportunities for improvement. <br><br>
+
+We look forward to developing more convenient features, improving how users interact with the platform and making relevant digital asset information easier to access. <br><br>
+
+The journey of digital finance is constantly evolving, and we believe that learning and responsible participation will remain important throughout that journey. <br><br><br>
+
+<b>10. Thank You for Choosing Golden Nest</b> <br><br>
+
+We appreciate every visitor who takes the time to explore our platform and understand what Golden Nest offers. <br><br>
+
+Whether you are here to explore cryptocurrency prices, learn about digital assets, review available platform features or manage your account activities, we appreciate your interest. <br><br>
+
+We encourage you to explore the platform, understand its services and make informed decisions. <br><br>
+
+<b>
+Golden Nest — Explore. Learn. Manage. Grow.</b> <br>
+<em>Building a more accessible digital experience, one step at a time!</em>
+      </p>
+   
+  </section>
+
+  <!-- PRIVACY -->
+  <section class="page" id="privacy">
+    <div class="fade page-heading">
+      <span class="pill">YOUR INFORMATION</span>
+      <h1>GOLDEN NEST PRIVACY POLICY</h1>
+      <p class="small">How information is handled on Golden Nest.</p>
+    </div>
+
+    <div class="box fade">
+      <h2>1. Introduction</h2>
+      <p>
+        At Golden Nest, we value your privacy and are committed to protecting the personal
+        information of our users. This privacy policy explains how we collect, use, store,
+        protect and manage your personal information when you visit our website, create an
+        account, use our services or communicate with us.
+        <br>
+        By accessing or using Golden Nest, you acknowledge that you have read and understood
+        this privacy policy.
+      </p>
+    </div>
+
+    <div class="box fade">
+      <h2>2. Information Used on This Website</h2>
+      <p>
+        Information entered into this demonstration website may include account details,
+        transaction information and uploaded receipt filenames. Browser storage alone does
+        not provide secure account storage or private customer records.
+      </p>
+    </div>
+
+    <div class="box fade">
+      <h2>3. Information We May Collect</h2>
+      <p>
+        To provide services effectively, maintain account security and comply with applicable
+        legal requirements, a properly operated platform may collect the following categories
+        of information.
+      </p>
+      <h4>A. Personal Information</h4>
+      <p>When a user registers for an account, information may include:</p>
+      <ul>
+        <li>Full Name</li>
+        <li>Email Address</li>
+        <li>Phone Number</li>
+        <li>Residential Address</li>
+        <li>Date of Birth</li>
+        <li>Country of Residence</li>
+      </ul>
+      <br>
+      <h4>B. Financial and Transaction Information</h4>
+      <p>When users use deposit, withdrawal or investment-related services, information may include:</p>
+      <ul>
+        <li>Deposit and withdrawal records</li>
+        <li>Transaction amounts and dates</li>
+        <li>Payment method details</li>
+        <li>Bank account information, where applicable</li>
+        <li>Uploaded payment receipts</li>
+      </ul>
+    </div>
+
+    <div class="box fade">
+      <h2>4. How We Use Information</h2>
+      <p>Information may be used for legitimate business and operational purposes, including:</p>
+      <ul>
+        <li><b>Account Management:</b> To create, maintain and manage user accounts.</li>
+        <li><b>Identity Verification:</b> To verify users and help prevent fraudulent activities.</li>
+        <li><b>Transaction Processing:</b> To process and record deposits, withdrawals and other transactions.</li>
+        <li><b>Security:</b> To monitor suspicious activity and protect user accounts.</li>
+        <li><b>Customer Support:</b> To respond to questions, complaints and service requests.</li>
+        <li><b>Service Improvement:</b> To understand how users interact with the website.</li>
+        <li><b>Communication:</b> To send account notifications and transaction updates.</li>
+        <li><b>Legal Compliance:</b> To meet applicable financial, regulatory and data protection obligations.</li>
+      </ul>
+      <br>
+      We will not use personal information for purposes incompatible with this policy unless
+      there is an appropriate legal basis to do so.
+    </div>
+
+    <div class="box fade">
+      <h2>5. Data Storage and Protection</h2>
+      <p>
+        Golden Nest takes the protection of personal information seriously. An operational
+        platform should use appropriate technical and organisational measures to protect
+        user information against unauthorised access, loss, alteration, disclosure or misuse.
+        <br><br>
+        Depending on the systems and service providers used, information may be stored
+        electronically on servers, databases or cloud-based storage systems.
+      </p>
+      <br>
+      Intended security measures may include:
+      <ul>
+        <li>Password protection and access controls.</li>
+        <li>Encryption where appropriate.</li>
+        <li>Restricted access to personal and financial information.</li>
+        <li>Security monitoring and system maintenance.</li>
+        <li>Regular reviews of data protection practices.</li>
+      </ul>
+      <br>
+      Personal information should be retained only for as long as reasonably necessary
+      for the purpose for which it was collected, including applicable legal, accounting,
+      security and regulatory requirements.
+    </div>
+
+    <div class="box fade">
+      <h2>6. Sharing of Information</h2>
+      <p>
+        Golden Nest does not sell users' personal information.
+        <br><br>
+        Information may be shared with relevant third parties when necessary to operate
+        services or meet legal obligations. These may include:
+      </p>
+      <ul>
+        <li>Payment processors and financial service providers.</li>
+        <li>Identity verification and fraud prevention providers.</li>
+        <li>Website hosting and cloud storage providers.</li>
+        <li>Technology and security service providers.</li>
+        <li>Legal, regulatory or government authorities where required by law.</li>
+      </ul>
+      <br>
+      Where third parties process personal information on behalf of the platform,
+      appropriate confidentiality and security protections should apply.
+    </div>
+
+    <div class="box fade">
+      <h2>7. Cookies and Website Technologies</h2>
+      <p>
+        The website may use cookies and similar technologies to improve user experience,
+        remember preferences, maintain sessions and understand website traffic.
+        <br><br>
+        Users may be able to manage or disable cookies through browser settings.
+        Disabling certain cookies may affect some website features.
+      </p>
+    </div>
+
+    <div class="box fade">
+      <h2>8. Data Retention</h2>
+      <p>
+        User information should be retained only for as long as necessary to fulfil the
+        purposes for which it was collected, maintain appropriate business records,
+        resolve disputes, enforce agreements and comply with applicable laws.
+        <br><br>
+        Some financial and transaction records may need to be retained for longer periods
+        where required by law or regulatory obligations.
+      </p>
+    </div>
+
+    <div class="box fade">
+      <h2>9. Children's Privacy</h2>
+      <p>
+        Golden Nest's services are not intended for individuals below the legal age required
+        to use financial or investment services in their jurisdiction. The platform should
+        not knowingly collect personal information from children in violation of applicable laws.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACT US -->
+  <section class="page" id="contactus">
+    <div class="fade page-heading">
+      <span class="pill">REACH OUT TO US</span>
+      <h1>CONTACT US</h1>
+    </div>
+    <div class="box fade">
+      <p>
+        If you have questions, concerns or requests regarding our platform,
+        please contact us:
+      </p>
+      <br><br>
+      <b>Company:</b> GOLDEN NEST
+      <br><br>
+      <b>Email:</b> Not provided
+      <br><br>
+      <b>Website:</b> Not provided
+      <br><br>
+      <b>Business Address:</b> Not provided
+    </div>
+  </section>
+
+  <!-- EXPLORE PLANS -->
+  <section class="page" id="shop">
+    <div class="fade page-heading">
+      <button class="back-button" onclick="showPage('dashboard')">
+        <span aria-hidden="true">←</span> Back to Home
+      </button>
+      <span class="pill">AVAILABLE OPTIONS</span>
+      <h1>Investment Plans</h1>
+      <p class="small">Review the available plans and their stated terms.</p>
+    </div>
+
+    <div class="shop-grid">
+      <div class="product-card fade">
+        <div class="product-name">STARTER PLAN</div>
+        <div class="product-price">$50 - $500</div>
+        <div class="product-note"><p>2.5% Daily</p><p>Duration: 3 Days</p></div>
+        <button class="buy-btn" onclick="buyItem('STARTER PLAN',50,2.5,3,'daily')">Choose Plan</button>
+      </div>
+
+      <div class="product-card fade">
+        <div class="product-name">BRONZE PLAN</div>
+        <div class="product-price">$501 - $1,000</div>
+        <div class="product-note"><p>3.5% Daily</p><p>Duration: 7 Days</p></div>
+        <button class="buy-btn" onclick="buyItem('BRONZE PLAN',501,3.5,7,'daily')">Choose Plan</button>
+      </div>
+
+      <div class="product-card fade">
+        <div class="product-name">SILVER PLAN</div>
+        <div class="product-price">$1,001 - $2,500</div>
+        <div class="product-note"><p>4.5% Daily</p><p>Duration: 14 Days</p></div>
+        <button class="buy-btn" onclick="buyItem('SILVER PLAN',1001,4.5,14,'daily')">Choose Plan</button>
+      </div>
+
+      <div class="product-card fade">
+        <div class="product-name">GOLD PLAN</div>
+        <div class="product-price">$2,501 - $5,000</div>
+        <div class="product-note"><p>5.5% Daily</p><p>Duration: 21 Days</p></div>
+        <button class="buy-btn" onclick="buyItem('GOLD PLAN',2501,5.5,21,'daily')">Choose Plan</button>
+      </div>
+
+      <div class="product-card fade">
+        <div class="product-name">PLATINUM PLAN</div>
+        <div class="product-price">$5,001 - $10,000</div>
+        <div class="product-note"><p>6.5% Daily</p><p>Duration: 25 Days</p></div>
+        <button class="buy-btn" onclick="buyItem('PLATINUM PLAN',5001,6.5,25,'daily')">Choose Plan</button>
+      </div>
+
+      <div class="product-card elite-card fade">
+        <span class="elite-badge">PREMIUM</span>
+        <div class="product-name">DIAMOND PLAN</div>
+        <div class="product-price">$10,000 - $25,000</div>
+        <div class="product-note"><p>201% Monthly</p><p>Duration: 31 Days</p></div>
+        <button class="buy-btn" onclick="buyItem('DIAMOND PLAN',10000,201,31,'monthly')">Choose Plan</button>
+      </div>
+    </div>
+
+    <p class="small plan-disclaimer">
+      Rates shown are advertised plan terms, not guaranteed investment returns.
+      Actual trading involves risk, and returns should not be represented as
+      guaranteed or withdrawable until independently verified.
+    </p>
+  </section>
+
+  <!-- INVEST -->
+  <section class="page" id="invest">
+    <div class="fade page-heading">
+      <button class="back-button" onclick="showPage('dashboard')">
+        <span aria-hidden="true">←</span> Back to Home
+      </button>
+      <span class="pill">GOLDEN NEST</span>
+      <h1>Invest</h1>
+      <p class="small">Choose a plan and enter the amount you want to allocate.</p>
+    </div>
+
+    <div class="shop-grid">
+      <div class="product-card fade">
+        <div class="product-name">STARTER PLAN</div>
+        <div class="product-price">$50 - $500</div>
+        <div class="product-note"><p>2.5% Daily</p><p>Duration: 3 Days</p></div>
+        <button class="buy-btn" onclick="openInvestForm('STARTER PLAN',50,500,2.5,3,'daily')">Invest</button>
+      </div>
+
+      <div class="product-card fade">
+        <div class="product-name">BRONZE PLAN</div>
+        <div class="product-price">$501 - $1,000</div>
+        <div class="product-note"><p>3.5% Daily</p><p>Duration: 7 Days</p></div>
+        <button class="buy-btn" onclick="openInvestForm('BRONZE PLAN',501,1000,3.5,7,'daily')">Invest</button>
+      </div>
+
+      <div class="product-card fade">
+        <div class="product-name">SILVER PLAN</div>
+        <div class="product-price">$1,001 - $2,500</div>
+        <div class="product-note"><p>4.5% Daily</p><p>Duration: 14 Days</p></div>
+        <button class="buy-btn" onclick="openInvestForm('SILVER PLAN',1001,2500,4.5,14,'daily')">Invest</button>
+      </div>
+
+      <div class="product-card fade">
+        <div class="product-name">GOLD PLAN</div>
+        <div class="product-price">$2,501 - $5,000</div>
+        <div class="product-note"><p>5.5% Daily</p><p>Duration: 21 Days</p></div>
+        <button class="buy-btn" onclick="openInvestForm('GOLD PLAN',2501,5000,5.5,21,'daily')">Invest</button>
+      </div>
+
+      <div class="product-card fade">
+        <div class="product-name">PLATINUM PLAN</div>
+        <div class="product-price">$5,001 - $10,000</div>
+        <div class="product-note"><p>6.5% Daily</p><p>Duration: 25 Days</p></div>
+        <button class="buy-btn" onclick="openInvestForm('PLATINUM PLAN',5001,10000,6.5,25,'daily')">Invest</button>
+      </div>
+
+      <div class="product-card elite-card fade">
+        <span class="elite-badge">PREMIUM</span>
+        <div class="product-name">DIAMOND PLAN</div>
+        <div class="product-price">$10,001 - $25,000</div>
+        <div class="product-note"><p>201% Monthly</p><p>Duration: 31 Days</p></div>
+        <button class="buy-btn" onclick="openInvestForm('DIAMOND PLAN',10001,25000,201,31,'monthly')">Invest</button>
+      </div>
+    </div>
+
+    <div class="box fade">
+      <h2>Your Investment Activity</h2>
+      <div id="investmentList"></div>
+    </div>
+
+    <p class="small plan-disclaimer">
+      Plan rates are displayed for information only and are not guaranteed returns.
+    </p>
+  </section>
+
+  <!-- INVESTMENT AMOUNT PAGE -->
+  <section class="page" id="invest-form">
+    <div class="fade page-heading">
+      <button class="back-button" onclick="showPage('invest')">
+        <span aria-hidden="true">←</span> Back to Plans
+      </button>
+      <span class="pill">INVESTMENT DETAILS</span>
+      <h1 id="selectedPlanName">Invest</h1>
+      <p class="small" id="selectedPlanTerms">Enter the amount you want to invest.</p>
+    </div>
+
+    <div class="box fade">
+      <div class="payment-summary">
+        <div class="small">Selected Plan</div>
+        <h2 id="selectedPlanSummary">No plan selected</h2>
+        <div class="small">Available Balance</div>
+        <div class="payment-amount bal">$0.00</div>
+      </div>
+
+      <label for="investAmount">Investment Amount (USD)</label>
+      <input type="number" id="investAmount" min="1" step="0.01" placeholder="Enter the amount you want to invest">
+      <p class="small" id="investAmountRange">Select a plan to see its amount range.</p>
+      <button class="action gold full-btn" onclick="submitInvestment()">Invest</button>
+
+      <p class="small plan-disclaimer">
+        Your request will be recorded as pending until an authorised administrator
+        verifies and approves it.
+      </p>
+    </div>
+  </section>
+
+  <!-- DEPOSIT -->
+  <section class="page" id="deposit">
+    <div class="fade page-heading">
+      <button class="back-button" onclick="showPage('dashboard')">
+        <span aria-hidden="true">←</span> Back to Home
+      </button>
+      <span class="pill">FUND YOUR ACCOUNT</span>
+      <h1>Make a Deposit</h1>
+      <p class="small">Enter an amount and select your preferred payment method.</p>
+    </div>
+
+    <div class="box fade">
+      <label for="depAmount">Deposit Amount (USD)</label>
+      <input type="number" id="depAmount" min="1" placeholder="Enter amount">
+
+      <h2>Select Payment Method</h2>
+      <div class="mode-grid">
+        <button class="mode" onclick="chooseMode(this,'Bitcoin')">Bitcoin</button>
+        <button class="mode" onclick="chooseMode(this,'USDT')">USDT</button>
+        <button class="mode" onclick="chooseMode(this,'Ethereum')">Ethereum</button>
+        <button class="mode" onclick="chooseMode(this,'Litecoin')">Litecoin</button>
+        <button class="mode" onclick="chooseMode(this,'Bank Transfer')">Bank Transfer</button>
+      </div>
+
+      <button class="action gold full-btn" onclick="proceedPayment()">Proceed with Payment</button>
+    </div>
+  </section>
+
+  <!-- PAYMENT -->
+  <section class="page" id="pay">
+    <div class="fade page-heading">
+      <button class="back-button" onclick="showPage('deposit')">
+        <span aria-hidden="true">←</span> Back to Deposit
+      </button>
+      <span class="pill">PAYMENT DETAILS</span>
+      <h1>Complete Your Payment</h1>
+      <p class="small">Review the payment information below.</p>
+    </div>
+
+    <div class="box fade">
+      <div class="payment-summary">
+        <div class="small">Payment Method</div>
+        <h2 id="payMethod">Not selected</h2>
+        <div class="small">Amount</div>
+        <div class="payment-amount" id="payAmount">$0.00</div>
+      </div>
+
+      <div id="payNetwork">
+        <label for="networkSelect">Select Network (if applicable)</label>
+        <select id="networkSelect">
+          <option value="Bitcoin">Bitcoin</option>
+          <option value="TRC20">USDT - TRC20</option>
+          <option value="ERC20">USDT - ERC20</option>
+          <option value="BEP20">USDT - BEP20</option>
+          <option value="Ethereum">Ethereum</option>
+          <option value="Litecoin">Litecoin</option>
+        </select>
+      </div>
+
+      <label>Payment Address / Bank Details</label>
+      <div class="addressline">
+        <span id="addressBox">Payment details will appear here.</span>
+        <button onclick="copyAddress()">Copy</button>
+      </div>
+
+      <p class="small payment-warning">
+        Always verify payment details through your official payment channel
+        before sending funds.
+      </p>
+
+      <label for="receiptFile">Upload Payment Receipt</label>
+      <div class="upload-box">
+        <div class="upload-icon">↑</div>
+        <p>Choose your payment receipt</p>
+        <input type="file" id="receiptFile" accept="image/*,.pdf" onchange="showFileName()">
+        <div class="small" id="fileName">No file selected</div>
+      </div>
+
+      <button class="action gold full-btn" onclick="submitReceipt()">Submit Payment Receipt</button>
+    </div>
+  </section>
+
+  <!-- WITHDRAW -->
+  <section class="page" id="withdraw">
+    <div class="fade page-heading">
+      <button class="back-button" onclick="showPage('dashboard')">
+        <span aria-hidden="true">←</span> Back to Home
+      </button>
+      <span class="pill">WITHDRAW FUNDS</span>
+      <h1>Withdraw</h1>
+      <p class="small">Available balance: <strong class="bal">$0.00</strong></p>
+    </div>
+
+    <div class="box fade">
+      <label for="wAmount">Withdrawal Amount (USD)</label>
+      <input type="number" id="wAmount" min="1" placeholder="Enter amount">
+
+      <label for="wNetwork">Withdrawal Method</label>
+      <select id="wNetwork">
+        <option value="Bitcoin">Bitcoin</option>
+        <option value="USDT TRC20">USDT TRC20</option>
+        <option value="USDT ERC20">USDT ERC20</option>
+        <option value="USDT BEP20">USDT BEP20</option>
+        <option value="Ethereum">Ethereum</option>
+        <option value="Litecoin">Litecoin</option>
+      </select>
+
+      <label for="wAddress">Wallet Address</label>
+      <input type="text" id="wAddress" placeholder="Enter your wallet address">
+
+      <button class="action gold full-btn" onclick="doWithdraw()">Submit Withdrawal</button>
+    </div>
+  </section>
+
+  <!-- HISTORY -->
+  <section class="page" id="history">
+    <div class="fade page-heading">
+      <button class="back-button" onclick="showPage('dashboard')">
+        <span aria-hidden="true">←</span> Back to Home
+      </button>
+      <span class="pill">ACCOUNT ACTIVITY</span>
+      <h1>Transaction History</h1>
+      <p class="small">Review your recorded transactions.</p>
+    </div>
+    <div class="box fade">
+      <div id="fullList"></div>
+    </div>
+  </section>
+
+  <!-- LIVE TRADING CHART -->
+  <section class="live-chart-section">
+    <div class="live-chart-heading">
+      <div>
+        <span class="chart-label">MARKET WATCH</span>
+        <h2>Live Trading Chart</h2>
+        <p>Watch live financial market updates and trading analysis.</p>
+      </div>
+      <span class="live-indicator"><span class="live-dot"></span> LIVE STREAM</span>
+    </div>
+
+    <div class="live-chart-container">
+      <iframe
+        src="https://www.youtube.com/embed/UYnCQEHx7ZU?si=pjloOvesbTR8jnJr"
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <div class="chart-footer">
+      <span>Market updates powered by YouTube</span>
+      <span>Streaming content may vary</span>
+    </div>
+  </section>
+
+  <!-- GLOBAL CRYPTO MARKET OVERVIEW -->
+<section class="global-market-section">
+
+  <div class="market-section-title">
+    <div>
+      <span class="chart-label">GOLDEN NEST MARKET</span>
+      <h2>Global Market Overview</h2>
+      <p>Explore the latest cryptocurrency market statistics.</p>
+    </div>
+    <span class="market-live">
+      <span class="live-dot"></span> LIVE DATA
+    </span>
+  </div>
+
+  <div class="global-market-grid">
+
+    <div class="global-market-card">
+      <span>Total Market Cap</span>
+      <h3 id="globalMarketCap">Loading...</h3>
+      <small>Global cryptocurrency value</small>
+    </div>
+
+    <div class="global-market-card">
+      <span>24H Trading Volume</span>
+      <h3 id="globalTradingVolume">Loading...</h3>
+      <small>Trading activity in the last 24 hours</small>
+    </div>
+
+    <div class="global-market-card">
+      <span>Bitcoin Dominance</span>
+      <h3 id="bitcoinDominance">Loading...</h3>
+      <small>Bitcoin share of total market cap</small>
+    </div>
+
+  </div>
+
+  <p class="market-data-status" id="globalMarketUpdated">
+    Fetching market information...
+  </p>
+
+</section>
+
+
+<!-- TOP GAINERS AND LOSERS -->
+<section class="gainers-section">
+
+  <div class="market-section-title">
+    <div>
+      <span class="chart-label">MARKET MOVEMENTS</span>
+      <h2>Top Gainers &amp; Losers</h2>
+      <p>24-hour cryptocurrency price performance.</p>
+    </div>
+  </div>
+
+  <div class="gainers-grid">
+
+    <div class="gainers-card">
+      <h3 class="gainers-title">Top Gainers <span>▲</span></h3>
+      <div id="topGainers">
+        <p class="market-loading">Loading market movements...</p>
+      </div>
+    </div>
+
+    <div class="gainers-card">
+      <h3 class="losers-title">Top Losers <span>▼</span></h3>
+      <div id="topLosers">
+        <p class="market-loading">Loading market movements...</p>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="market-data-status" id="gainersUpdated">
+    Market data is being updated...
+  </p>
+
+  <p class="market-disclaimer">
+    Market movements are based on the 100 highest-ranked coins returned
+    by the data provider, not every cryptocurrency in existence.
+    Figures are informational and may change.
+  </p>
+
+</section>
+
+<!-- CRPYTO PREDICTION SECTION -->
+<section class="prediction-section">
+  <h2>Crypto Investment Simulator</h2>
+  <p>Explore hypothetical cryptocurrency price movements.</p>
+
+  <label>Select Cryptocurrency</label>
+  <select id="predictionCoin">
+    <option value="bitcoin">Bitcoin</option>
+    <option value="ethereum">Ethereum</option>
+    <option value="solana">Solana</option>
+  </select>
+
+  <label>Investment Amount ($)</label>
+  <input type="number" id="investmentAmount" placeholder="100">
+
+  <label>Purchase Price ($)</label>
+  <input type="number" id="purchasePrice" placeholder="50000">
+
+  <label>Hypothetical Future Price ($)</label>
+  <input type="number" id="futurePrice" placeholder="60000">
+
+  <button onclick="calculatePrediction()">
+    Calculate Scenario
+  </button>
+
+  <div id="predictionResult"></div>
+
+  <small>
+   <em> This is a hypothetical simulation.</em>
+  </small>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer class="golden-footer">
+
+  <div class="footer-grid">
+
+    <!-- ABOUT -->
+    <div class="footer-column">
+      <h3>ABOUT</h3>
+      <button onclick="showPage('about')">Our Company</button>
+      <button onclick="showPage('about')">Our History</button>
+      <button onclick="showPage('about')">Community</button>
+      <button onclick="showPage('about')">Chairman's Message</button>
+    </div>
+
+    <!-- SECURITY & PRIVACY -->
+    <div class="footer-column">
+      <h3>SECURITY & PRIVACY</h3>
+      <button onclick="showPage('privacy')">Online Policy</button>
+      <button onclick="showPage('privacy')">Privacy Policy</button>
+      <button onclick="showPage('privacy')">Terms of Use</button>
+      <button onclick="showPage('privacy')">Online Security</button>
+    </div>
+
+    <!-- POPULAR LINKS -->
+    <div class="footer-column">
+      <h3>POPULAR LINKS</h3>
+      <button onclick="showPage('dashboard')">Home</button>
+      <button onclick="showPage('shop')">Investment Plans</button>
+      <button onclick="showPage('history')">Transactions</button>
+      <button onclick="showPage('deposit')">Deposit</button>
+      <button onclick="showPage('withdraw')">Withdraw</button>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="footer-column">
+      <h3>CONTACT</h3>
+      <button onclick="showPage('contactus')">Contact Us</button>
+    </div>
+
+  </div>
+
+  <!-- CONNECT -->
+  <div class="footer-connect">
+    <h3>CONNECT</h3>
+
+    <div class="footer-socials">
+      <button onclick="showPage('contactus')" aria-label="Facebook">
+        <i class="fa-brands fa-facebook-f"></i>
+      </button>
+
+      <button onclick="showPage('contactus')" aria-label="Instagram">
+        <i class="fa-brands fa-instagram"></i>
+      </button>
+
+      <button onclick="showPage('contactus')" aria-label="LinkedIn">
+        <i class="fa-brands fa-linkedin-in"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- COPYRIGHT -->
+  <div class="footer-bottom">
+    <div class="footer-brand">GOLDEN NEST</div>
+
+    <p class="footer-copy">
+      © <span id="year"></span> Golden Nest. All Rights Reserved.
+    </p>
+  </div>
+
+</footer>
+
+<div id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
